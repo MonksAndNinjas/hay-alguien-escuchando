@@ -1,5 +1,7 @@
 import React from "react";
 
+// first stars then water reflection then plantlife
+
 class Jungle extends React.Component {
   render() {
     return (

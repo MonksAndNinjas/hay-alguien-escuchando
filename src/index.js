@@ -8,6 +8,7 @@ import thunk from "redux-thunk";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // imports for reducers
 import { combineReducers } from "redux";
+import artReducer from "./reducers/artReducer";
 // import pages for rendering routes
 import ZazanilliContainer from "./containers/ZazanilliContainer";
 import NiltzeContainer from "./containers/NiltzeContainer";
@@ -15,6 +16,8 @@ import AciContainer from "./containers/AciContainer";
 import CochittaContainer from "./containers/CochittaContainer";
 
 import App from "./App";
+
+const rootReducer = combineReducers({ artCollection: artReducer });
 
 const rootElement = document.getElementById("root");
 

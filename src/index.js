@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 // imports for creating and handling store
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 // import for creating Routes
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import pages for rendering routes

@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// imports for creating and handling store
+import { createStore, applyMiddleware } from "redux";
+
 // import for creating Routes
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import pages for rendering routes

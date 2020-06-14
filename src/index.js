@@ -18,18 +18,20 @@ import CochittaContainer from "./containers/CochittaContainer";
 import App from "./App";
 
 const rootReducer = combineReducers({ artCollection: artReducer });
-
+const store = createStore(rootReducer, applyMiddleware(thunk));
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <Router>
-      <Route exact path="/" component={AciContainer} />
-      <Route exact path="/niltze" component={NiltzeContainer} />
-      <Route exact path="/zazanilli" component={ZazanilliContainer} />
-      <Route exact path="/cochitta" component={CochittaContainer} />
-    </Router>
+    <Provider store={store}>
+      <App />
+      <Router>
+        <Route exact path="/" component={AciContainer} />
+        <Route exact path="/niltze" component={NiltzeContainer} />
+        <Route exact path="/zazanilli" component={ZazanilliContainer} />
+        <Route exact path="/cochitta" component={CochittaContainer} />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   rootElement
 );

@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 // import for creating Routes
 import { BrowserRouter as Router, Route } from "react-router-dom";
+// imports for reducers
+import { combineReducers } from "redux";
 // import pages for rendering routes
 import ZazanilliContainer from "./containers/ZazanilliContainer";
 import NiltzeContainer from "./containers/NiltzeContainer";

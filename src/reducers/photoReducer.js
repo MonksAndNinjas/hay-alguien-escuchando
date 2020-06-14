@@ -1,13 +1,13 @@
 // handles photos data from GITHUB API for use in store
-export default function photoReducer(
+export default function artReducer(
   state = {
     loading: false,
-    photos: []
+    collection: []
   },
   action
 ) {
   switch (action.type) {
-    case "LOADING_PHOTOS_DATA":
+    case "LOADING_ART_DATA":
       return { ...state, loading: true };
 
     default:

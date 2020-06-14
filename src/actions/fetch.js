@@ -1,8 +1,8 @@
-// fetches photos of artword from GITHUB
+// fetches artwork from GITHUB
 
-export function fetchPhotos() {
+export function fetchArt() {
   return dispatch => {
-    dispatch({ type: "LOADING_PHOTOS_DATA" });
+    dispatch({ type: "LOADING_ART_DATA" });
     // fetches all photos within directory
     return fetch(
       "https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img",
@@ -12,28 +12,30 @@ export function fetchPhotos() {
     )
       .then(response => response.json())
       .then(data => {
-        let photoPromises = data.map(photos => {
-          dispatch({ type: "LOADING_PHOTOS" });
+        let artPromises = data.map(collection => {
+          dispatch({ type: "LOADING_COLLECTION" });
           // makes individual calls to retrieve data for photo
           return fetch(
             "https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img/" +
-              photos.name,
+              collection.name,
             {
               accept: "application/json"
             }
           )
             .then(response => response.json())
-            .then(photo =>
+            .then(art =>
               dispatch({
-                type: "FETCH_PHOTOS",
-                name: photos.name,
-                payload: photo
+                type: "FETCH_ART",
+                name: collection.name,
+                payload: art
               })
             );
         });
         // makes sure all promises have been complete before continuing
-        return Promise.all(photoPromises);
+        return Promise.all(artPromises);
       })
-      .then(photos => dispatch({ type: "FETCH_PHOTOS_DATA", payload: photos }));
+      .then(collection =>
+        dispatch({ type: "FETCH_ART_DATA", payload: collection })
+      );
   };
 }

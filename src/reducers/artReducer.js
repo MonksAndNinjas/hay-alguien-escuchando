@@ -26,7 +26,6 @@ export default function artReducer(
     case "FETCH_COLLECTION":
       state.artCollection[`${action.name}`] = action.payload;
 
-      console.log(state);
       return {
         collectionLoading: false,
         artCollection: state.artCollection,

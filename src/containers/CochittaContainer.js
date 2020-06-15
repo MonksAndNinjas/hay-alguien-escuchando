@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/CochittaContainer.css";
-//connects to store and allows use of functions in /actions
+// connects to store and allows use of functiuons in /actions
 import { connect } from "react-redux";
 
 // Upload and render artwork
@@ -14,5 +14,12 @@ class CochittaContainer extends React.Component {
     );
   }
 }
+// makes photos from store accessible
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    artCollection: state.artCollection
+  };
+};
 
 export default connect(mapStateToProps)(CochittaContainer);

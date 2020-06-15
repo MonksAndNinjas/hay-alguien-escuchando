@@ -20,7 +20,6 @@ export default function artReducer(
       return { ...state, collectionLoading: true };
 
     case "FETCH_ART_DATA":
-      console.log(state);
       return { loading: false, artCollection: state.artCollection };
 
     case "FETCH_COLLECTION":

@@ -12,12 +12,12 @@ export function fetchArt() {
     )
       .then(response => response.json())
       .then(data => {
-        let artPromises = data.map(collection => {
+        let artPromises = data.map(artCollection => {
           dispatch({ type: "LOADING_COLLECTION" });
           // makes individual calls to retrieve data for photo
           return fetch(
             "https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img/" +
-              collection.name,
+              artCollection.name,
             {
               accept: "application/json"
             }
@@ -26,7 +26,7 @@ export function fetchArt() {
             .then(art =>
               dispatch({
                 type: "FETCH_COLLECTION",
-                name: collection.name,
+                name: artCollection.name,
                 payload: art
               })
             );
@@ -34,8 +34,8 @@ export function fetchArt() {
         // makes sure all promises have been complete before continuing
         return Promise.all(artPromises);
       })
-      .then(collection =>
-        dispatch({ type: "FETCH_ART_DATA", payload: collection })
+      .then(artCollection =>
+        dispatch({ type: "FETCH_ART_DATA", payload: artCollection })
       );
   };
 }

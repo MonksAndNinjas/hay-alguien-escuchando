@@ -25,7 +25,7 @@ export function fetchArt() {
             .then(response => response.json())
             .then(art =>
               dispatch({
-                type: "FETCH_ART",
+                type: "FETCH_COLLECTION",
                 name: collection.name,
                 payload: art
               })

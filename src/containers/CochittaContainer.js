@@ -1,10 +1,12 @@
 import React from "react";
-import "../css/CochittaContainer.css";
+// import art components
+import ArtArchive from "../components/Cochitta/ArtArchive";
 // connects to store and allows use of functiuons in /actions
 import { connect } from "react-redux";
 // allows use of helper function
 import { displayArt } from "../helpers/displayArt";
-
+// styling
+import "../css/CochittaContainer.css";
 // Upload and render artwork
 
 class CochittaContainer extends React.Component {
@@ -18,13 +20,19 @@ class CochittaContainer extends React.Component {
       <div>
         <h1>Cochitta</h1>
 
-        {displayArt(this.props.artCollection) ? <div>yes</div> : null}
+        {displayArt(this.props.artCollection.artCollection) ? (
+          <div>
+            <p>yes</p>
+            <ArtArchive />
+          </div>
+        ) : null}
       </div>
     );
   }
 }
 // makes photos from store accessible
 const mapStateToProps = state => {
+  console.log(state.artCollection);
   return {
     artCollection: state.artCollection
   };

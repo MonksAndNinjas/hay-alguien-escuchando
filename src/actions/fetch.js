@@ -14,7 +14,7 @@ export function fetchArt() {
       .then(data => {
         let artPromises = data.map(artCollection => {
           dispatch({ type: "LOADING_COLLECTION" });
-          // makes individual calls to retrieve data for photo
+          // makes individual calls to retrieve data for art
           return fetch(
             "https://api.github.com/repos/MonksAndNinjas/MonksAndNinjas.github.io/contents/img/" +
               artCollection.name,

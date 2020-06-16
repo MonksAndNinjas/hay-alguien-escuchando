@@ -1,7 +1,5 @@
 // is art ready to be displayed?
-export const displayArt = artData => {
-  let artCollection = artData.artCollection;
-
+export const displayArt = artCollection => {
   return (
     artCollection.drawings.length > 0 &&
     artCollection.digital.length > 0 &&

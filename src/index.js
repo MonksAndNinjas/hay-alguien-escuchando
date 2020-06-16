@@ -24,8 +24,8 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
       <Router>
+        <App />
         <Route exact path="/" component={AciContainer} />
         <Route exact path="/niltze" component={NiltzeContainer} />
         <Route exact path="/zazanilli" component={ZazanilliContainer} />

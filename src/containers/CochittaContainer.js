@@ -15,24 +15,24 @@ class CochittaContainer extends React.Component {
       <div>
         <h1>Cochitta</h1>
 
-        {displayArt(this.props.artCollection.artCollection) ? (
+        {displayArt(this.props.collectionData.artCollection) ? (
           <div>
-            <p>yes</p>
+            <p>Loading Complete</p>
             <React.Fragment>
               <ArtArchive
-                category={this.props.artCollection.artCollection.digital}
+                category={this.props.collectionData.artCollection.digital}
                 type={"digital"}
               />
               <ArtArchive
-                category={this.props.artCollection.artCollection.drawings}
+                category={this.props.collectionData.artCollection.drawings}
                 type={"drawings"}
               />
               <ArtArchive
-                category={this.props.artCollection.artCollection.signature}
+                category={this.props.collectionData.artCollection.signature}
                 type={"signature"}
               />
               <ArtArchive
-                category={this.props.artCollection.artCollection.paintings}
+                category={this.props.collectionData.artCollection.paintings}
                 type={"paintings"}
               />
             </React.Fragment>
@@ -46,7 +46,7 @@ class CochittaContainer extends React.Component {
 const mapStateToProps = state => {
   //console.log(state.artCollection);
   return {
-    artCollection: state.artCollection
+    collectionData: state.artCollection
   };
 };
 

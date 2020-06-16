@@ -6,7 +6,7 @@ import "../../css/AciContainer.css";
 class Sierras extends React.Component {
   render() {
     return (
-      <div>
+      <div className="aciContainer">
         <h1 className="center">Sierras</h1>
       </div>
     );

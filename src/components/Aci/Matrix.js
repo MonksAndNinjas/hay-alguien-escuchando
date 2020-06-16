@@ -5,7 +5,7 @@ import React from "react";
 class Matrix extends React.Component {
   render() {
     return (
-      <div>
+      <div className="aciContainer">
         <h1 className="center">Matrix</h1>
       </div>
     );

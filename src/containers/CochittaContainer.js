@@ -11,11 +11,6 @@ import "../css/CochittaContainer.css";
 
 class CochittaContainer extends React.Component {
   render() {
-    let digital = this.props.artCollection.artCollection.digital;
-    let drawings = this.props.artCollection.artCollection.drawings;
-    let signature = this.props.artCollection.artCollection.signature;
-    let paintings = this.props.artCollection.artCollection.paintings;
-
     return (
       <div>
         <h1>Cochitta</h1>
@@ -23,7 +18,24 @@ class CochittaContainer extends React.Component {
         {displayArt(this.props.artCollection.artCollection) ? (
           <div>
             <p>yes</p>
-            <ArtArchive />
+            <React.Fragment>
+              <ArtArchive
+                category={this.props.artCollection.artCollection.digital}
+                type={"digital"}
+              />
+              <ArtArchive
+                category={this.props.artCollection.artCollection.drawings}
+                type={"drawings"}
+              />
+              <ArtArchive
+                category={this.props.artCollection.artCollection.signature}
+                type={"signature"}
+              />
+              <ArtArchive
+                category={this.props.artCollection.artCollection.paintings}
+                type={"paintings"}
+              />
+            </React.Fragment>
           </div>
         ) : null}
       </div>
@@ -32,7 +44,7 @@ class CochittaContainer extends React.Component {
 }
 // makes photos from store accessible
 const mapStateToProps = state => {
-  console.log(state.artCollection);
+  //console.log(state.artCollection);
   return {
     artCollection: state.artCollection
   };

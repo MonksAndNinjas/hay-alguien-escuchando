@@ -10,7 +10,7 @@ import Matrix from "../components/Aci/Matrix";
 class AciContainer extends React.Component {
   render() {
     return (
-      <div className="wrapper">
+      <div className="container">
         <Jungle />
         <Sierras />
         <Desert />

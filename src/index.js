@@ -25,11 +25,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
-        <Route exact path="/" component={AciContainer} />
-        <Route exact path="/niltze" component={NiltzeContainer} />
-        <Route exact path="/zazanilli" component={ZazanilliContainer} />
-        <Route exact path="/cochitta" component={CochittaContainer} />
+        <React.Fragment>
+          <App />
+          <Route exact path="/" component={AciContainer} />
+          <Route exact path="/niltze" component={NiltzeContainer} />
+          <Route exact path="/zazanilli" component={ZazanilliContainer} />
+          <Route exact path="/cochitta" component={CochittaContainer} />
+        </React.Fragment>
       </Router>
     </Provider>
   </React.StrictMode>,

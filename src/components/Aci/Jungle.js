@@ -7,7 +7,7 @@ import "../../css/Jungle.scss";
 class Jungle extends React.Component {
   render() {
     return (
-      <div className="wrapper">
+      <div id="jungle" className="wrapper">
         <div className="stars large" />
         <div className="stars medium" />
         <div className="stars small" />
